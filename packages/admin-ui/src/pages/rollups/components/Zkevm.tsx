@@ -144,7 +144,7 @@ export default function Zkevm({ description }: { description: string }) {
 
                     <Row className="staker-network">
                         <Col>
-                            <SubTitle>Execution Clients</SubTitle>
+                            <SubTitle>zkEVM Modules</SubTitle>
                             {currentOptimismConfigReq.data.executionClients.map(
                                 (executionClient, i) => (
                                     <ExecutionClient
