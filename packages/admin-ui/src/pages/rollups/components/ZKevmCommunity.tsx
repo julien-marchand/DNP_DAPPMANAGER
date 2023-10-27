@@ -44,11 +44,16 @@ export default function ZkevmCommunity() {
                 discussions.
               </div>
               <div>
-                <a href="https://polygon.technology/governance-pillars" className="iconLink" target="_blank" rel="noreferrer">
+                <a href="https://forum.polygon.technology/" className="iconLink" target="_blank" rel="noreferrer">
                   <MdForum style={iconStyle} />
                 </a>
-                <b>Governance Forum</b>: Delve into deep-dive discussions, share
-                your perspectives, or keep abreast with the latest updates.
+                <b>Forum</b>: The place for thoughtful discussion on Zero Knowledge, Polygon products and Improvement Proposals
+              </div>
+              <div>
+                <a href="https://polygon.technology/governance" className="iconLink" target="_blank" rel="noreferrer">
+                  <MdForum style={iconStyle} />
+                </a>
+                <b>Governance</b>: Participate in shaping the zkEVM and Polygon protocols
               </div>
 
             </Card.Body>

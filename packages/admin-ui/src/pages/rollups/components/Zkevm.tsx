@@ -114,7 +114,10 @@ export default function Zkevm({ description }: { description: string }) {
             {currentOptimismConfigReq.data ? (
                 <Card>
                     <p>
-                        Set up your zkEVM node configuration: <br />
+                        The zkEVM is a zero-knowledge powered scalability solution. You can use your dappnode to run self-sovereign tools to empower yourself.
+                        Currently, you can deploy your own UI to Force Transactions in the zkEVM without needing the sequencer, making you uncensorable. Most of the times you won't need this, as it needs ETH in L1 to pay for it, but if something were to happen to the zkEVM, you would be able to withdraw your funds.
+                        <br />
+                        <br />
                         (1) <b>Choose</b> an <b>Execution Client</b> <br />
                         (2) <b>Select</b> the <b>zkEVM Node</b> <br />
                         (3) <b>Input</b> the <b>Ethereum RPC URL</b> (Not necessary if you
