@@ -18,6 +18,7 @@ import { confirm } from "components/ConfirmDialog";
 import { disclaimer } from "../data";
 import { withToast } from "components/toast/Toast";
 import ZkevmCommunity from "./ZKevmCommunity";
+import ZkevmModule from "./columns/ZkevmModule";
 
 export default function Zkevm({ description }: { description: string }) {
     const { theme } = React.useContext(AppContext);
@@ -148,18 +149,14 @@ export default function Zkevm({ description }: { description: string }) {
                     <Row className="staker-network">
                         <Col>
                             <SubTitle>zkEVM Modules</SubTitle>
-                            {currentOptimismConfigReq.data.executionClients.map(
-                                (executionClient, i) => (
-                                    <ExecutionClient
-                                        key={i}
-                                        executionClient={executionClient}
-                                        setNewExecClient={setNewExecClient}
-                                        isSelected={
-                                            executionClient.dnpName === newExecClient?.dnpName
-                                        }
-                                    />
-                                )
-                            )}
+                            <ZkevmModule
+                                rollup={currentOptimismConfigReq.data.rollup}
+                                setNewRollup={setNewRollup}
+                                isSelected={
+                                    currentOptimismConfigReq.data.rollup.dnpName ===
+                                    newRollup?.dnpName
+                                }
+                            />
                         </Col>
 
                         <Col>

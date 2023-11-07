@@ -46,7 +46,7 @@ export default function ExecutionClient({
         </div>
       ) : null}
 
-      <div className="title">{prettyDnpName(executionClient.dnpName)} </div>
+      <div className="title">{prettyDnpName(executionClient.dnpName)}</div>
 
       {executionClient.status === "ok" &&
         isSelected &&
@@ -56,8 +56,7 @@ export default function ExecutionClient({
             <Button
               onClick={() =>
                 navigate(
-                  `${getInstallerPath(executionClient.dnpName)}/${
-                    executionClient.dnpName
+                  `${getInstallerPath(executionClient.dnpName)}/${executionClient.dnpName
                   }`
                 )
               }
