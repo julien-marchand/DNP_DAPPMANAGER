@@ -26,6 +26,7 @@ import {
   ExecutionClientOptimism,
   OptimismL2Geth,
   OptimismNode,
+  ZkevmConfigGet,
 } from "@dappnode/types";
 
 /**
@@ -1425,6 +1426,47 @@ export interface OptimismConfigSet {
   archive?: OptimismItemOk<"archive">;
   executionClient?: OptimismItemOk<"execution">;
   rollup?: OptimismItemOk<"rollup">;
+}
+
+// zkEVM
+
+export type ZkevmType = "rollup";
+export type ZkevmItem<T extends ZkevmType> = ZkevmItemOk<T> | ZkevmItemError<T>;
+
+interface ZkevmRollup {
+  dnpName: ZkevmNode;
+  mainnetRpcUrl: string;
+}
+
+type ZkevmItemBasic<T extends ZkevmType> = T extends "rollup"
+  ? ZkevmRollup
+  : never;
+
+export type ZkevmItemError<T extends ZkevmType> = {
+  status: "error";
+  error: string;
+} & ZkevmItemBasic<T>;
+
+export type ZkevmItemOk<T extends ZkevmType> = {
+  status: "ok";
+  avatarUrl: string;
+  isInstalled: boolean;
+  isUpdated: boolean;
+  isRunning: boolean;
+  data?: PackageItemData;
+  isSelected: boolean;
+} & ZkevmItemBasic<T>;
+
+export interface ZkevmConfigGet {
+  rollup: ZkevmItem<"rollup">;
+}
+
+export interface ZkevmConfigGetOk {
+  rollup: ZkevmItemOk<"rollup">;
+}
+
+export interface ZkevmConfigSet {
+  rollup?: ZkevmItemOk<"rollup">;
 }
 
 /**
